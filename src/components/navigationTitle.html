@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../../../dist/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav
+      class="w-full bg-background-color min-h-[83px] flex justify-between items-center tracking-tighter mx-4"
+    >
+      <!-- 왼쪽 -->
+      <div class="gap-x-1">
+        <img src="../assets/back-icon.svg" class="hidden" />
+        <h1 class="font-laundry font-bold text-primary-500 text-[28px]">
+          오는길에
+        </h1>
+      </div>
+
+      <!-- 오른쪽 -->
+      <div class="gap-x-1 flex items-center flex-reverse">
+        <img src="../assets/map.svg" class="size-5" />
+        <a class="font-laundry text-gray-700 text-toggle-text"
+          >종로구 종로3길</a
+        >
+      </div>
+    </nav>
+  </body>
+</html>
