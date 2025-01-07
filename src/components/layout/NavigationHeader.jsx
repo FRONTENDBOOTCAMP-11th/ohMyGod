@@ -1,3 +1,5 @@
+import HeaderButton from "../HeaderButton";
+
 export default function NavigationHeader() {
   return (
     <nav className="bg-background-color w-full min-h-[83px] flex justify-between items-center tracking-tighter sticky top-0">
@@ -9,10 +11,7 @@ export default function NavigationHeader() {
       </div>
 
       <div className="gap-x-1 mx-4 flex items-center flex-reverse">
-        <img src="../../assets/map.svg" className="size-5" />
-        <a className="font-laundry text-gray-700 text-toggle-text">
-          종로구 종로3길
-        </a>
+        <HeaderButton />
       </div>
     </nav>
   );
