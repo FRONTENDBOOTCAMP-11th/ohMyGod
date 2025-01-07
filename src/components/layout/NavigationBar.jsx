@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 import homeDefault from "/src/assets/home-default.png";
@@ -39,8 +40,39 @@ const navItems = [
 ];
 
 export default function NavigationBar() {
+  const [visible, setVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+
+      // 스크롤 방향 감지
+      const isScrollingDown = currentScrollPos > prevScrollPos;
+
+      // 스크롤 위치가 100px 미만일 때는 항상 표시
+      if (currentScrollPos < 30) {
+        setVisible(true);
+      } else {
+        setVisible(!isScrollingDown);
+      }
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
   return (
-    <nav className="bg-white flex items-center justify-around shadow-card-shadow min-h-[83px]">
+    <nav
+      className={`bg-white flex items-center justify-around shadow-card-shadow min-h-[83px] fixed bottom-0 left-0 right-0 transition-transform duration-300 ${
+        visible ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
       <ul className="font-laundry text-center text-xs tracking-tight flex justify-between items-center gap-12 mt-3">
         {navItems.map((item) => (
           <li key={item.path}>
