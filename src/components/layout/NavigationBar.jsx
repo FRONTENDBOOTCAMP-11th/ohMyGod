@@ -1,14 +1,13 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
-import homeDefault from "/assets/home-default.svg";
-import homeActive from "/assets/home-actived.svg";
-import myerrandsDefault from "/assets/myerrands-default.svg";
-import myerrandsActive from "/assets/myerrands-actived.svg";
-import chatingDefault from "/assets/chating-default.svg";
-import chatingActive from "/assets/chating-actived.svg";
-import myinfoDefault from "/assets/myinfo-default.svg";
-import myinfoActive from "/assets/myinfo-actived.svg";
+import homeDefault from "/src/assets/home-default.png";
+import homeActive from "/src/assets/home-actived.png";
+import myerrandsDefault from "/src/assets/myerrands-default.png";
+import myerrandsActive from "/src/assets/myerrands-actived.png";
+import chatingDefault from "/src/assets/chating-default.png";
+import chatingActive from "/src/assets/chating-actived.png";
+import myinfoDefault from "/src/assets/myinfo-default.png";
+import myinfoActive from "/src/assets/myinfo-actived.png";
 
 const navItems = [
   {
@@ -18,7 +17,8 @@ const navItems = [
     activeIcon: homeActive,
   },
   {
-    path: "/myerrands",
+    // 다른 페이지 완성되는대로 추후 경로 수정 예정
+    path: "/users/signup",
     text: "내 심부름",
     defaultIcon: myerrandsDefault,
     activeIcon: myerrandsActive,
