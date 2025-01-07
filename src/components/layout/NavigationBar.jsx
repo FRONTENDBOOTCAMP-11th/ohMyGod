@@ -40,8 +40,8 @@ const navItems = [
 ];
 
 export default function NavigationBar() {
-  const [visible, setVisible] = useState(true);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true); // 네비게이션 바 표시 상태를 관리하는 state
+  const [prevScrollPos, setPrevScrollPos] = useState(0); // 마지막 스크롤 위치를 저장하는 state
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,13 +50,14 @@ export default function NavigationBar() {
       // 스크롤 방향 감지
       const isScrollingDown = currentScrollPos > prevScrollPos;
 
-      // 스크롤 위치가 100px 미만일 때는 항상 표시
+      // 스크롤 위치가 30px 미만일 때는 항상 표시
       if (currentScrollPos < 30) {
         setVisible(true);
       } else {
         setVisible(!isScrollingDown);
       }
 
+      // 마지막 스크롤 위치 업데이트
       setPrevScrollPos(currentScrollPos);
     };
 
@@ -65,7 +66,7 @@ export default function NavigationBar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [prevScrollPos]);
+  }, [prevScrollPos]); // prevScrollPos가 변경될때마다 useEffect 실행
 
   return (
     <nav
