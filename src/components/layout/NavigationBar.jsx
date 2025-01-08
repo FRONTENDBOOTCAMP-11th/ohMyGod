@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
@@ -9,6 +10,19 @@ import chatingDefault from "/src/assets/chating-default.png";
 import chatingActive from "/src/assets/chating-actived.png";
 import myinfoDefault from "/src/assets/myinfo-default.png";
 import myinfoActive from "/src/assets/myinfo-actived.png";
+=======
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+import homeDefault from "/assets/home-default.svg";
+import homeActive from "/assets/home-actived.svg";
+import myerrandsDefault from "/assets/myerrands-default.svg";
+import myerrandsActive from "/assets/myerrands-actived.svg";
+import chatingDefault from "/assets/chating-default.svg";
+import chatingActive from "/assets/chating-actived.svg";
+import myinfoDefault from "/assets/myinfo-default.svg";
+import myinfoActive from "/assets/myinfo-actived.svg";
+>>>>>>> 15bbdc7aa1647527a43fc19a74247dd09df2c562
 
 const navItems = [
   {
@@ -18,8 +32,12 @@ const navItems = [
     activeIcon: homeActive,
   },
   {
+<<<<<<< HEAD
     // 다른 페이지 완성되는대로 추후 경로 수정 예정
     path: "/users/signup",
+=======
+    path: "/myerrands",
+>>>>>>> 15bbdc7aa1647527a43fc19a74247dd09df2c562
     text: "내 심부름",
     defaultIcon: myerrandsDefault,
     activeIcon: myerrandsActive,
@@ -40,6 +58,7 @@ const navItems = [
 ];
 
 export default function NavigationBar() {
+<<<<<<< HEAD
   const [visible, setVisible] = useState(true); // 네비게이션 바 표시 상태를 관리하는 state
   const [prevScrollPos, setPrevScrollPos] = useState(0); // 마지막 스크롤 위치를 저장하는 state
 
@@ -74,12 +93,19 @@ export default function NavigationBar() {
         visible ? "translate-y-0" : "translate-y-full"
       }`}
     >
+=======
+  return (
+    <nav className="bg-white flex items-center justify-around shadow-card-shadow min-h-[83px]">
+>>>>>>> 15bbdc7aa1647527a43fc19a74247dd09df2c562
       <ul className="font-laundry text-center text-xs tracking-tight flex justify-between items-center gap-12 mt-3">
         {navItems.map((item) => (
           <li key={item.path}>
             <NavLink
               to={item.path}
+<<<<<<< HEAD
               title={item.text}
+=======
+>>>>>>> 15bbdc7aa1647527a43fc19a74247dd09df2c562
               className={({ isActive }) =>
                 `flex flex-col items-center text-gray-700 ${
                   isActive ? "font-bold text-primary-500" : ""

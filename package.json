@@ -12,9 +12,14 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.62.11",
+<<<<<<< HEAD
     "@tanstack/react-query-devtools": "^5.62.16",
     "axios": "^1.7.9",
     "dayjs": "^1.11.13",
+=======
+    "@tanstack/react-query-devtools": "^5.62.11",
+    "axios": "^1.7.9",
+>>>>>>> 15bbdc7aa1647527a43fc19a74247dd09df2c562
     "moment": "^2.30.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
