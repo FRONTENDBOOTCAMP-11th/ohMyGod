@@ -79,6 +79,7 @@ export default function NavigationBar() {
           <li key={item.path}>
             <NavLink
               to={item.path}
+              title={item.text}
               className={({ isActive }) =>
                 `flex flex-col items-center text-gray-700 ${
                   isActive ? "font-bold text-primary-500" : ""
