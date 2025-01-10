@@ -91,24 +91,24 @@ export default function ListItem({ item }) {
   const remainingTime = calculateRemainingTime(item.extra?.due);
 
   return (
-    <li className="list_item w-full h-[116px] rounded-[10px] bg-[#fff] shadow-card-shadow px-[22px] py-[18px] flex gap-[24px] items-center">
-      <img
-        src={categoryImage}
-        alt="게시글 대표이미지"
-        className="flex-shrink-0 w-[40px] h-[40px]"
-      />
+    <Link
+      to={`/products/${item._id}`}
+      state={{ back: "/products", title: "심부름 상세" }}
+      className="w-full" // 업데이트 된 방식 props 추가
+    >
+      <li className="list_item w-full h-[116px] rounded-[10px] bg-white shadow-card-shadow px-[22px] py-[18px] flex gap-[24px] items-center">
+        <img
+          src={categoryImage}
+          alt="게시글 대표이미지"
+          className="flex-shrink-0 w-[40px] h-[40px]"
+        />
 
-      <div className="li_contents max-w-full min-w-0 flex flex-col flex-grow gap-[4px]">
-        <h2 className="li_title font-laundry text-card-title truncate overflow-hidden text-ellipsis">
-          <Link
-            to={`/products/${item._id}`}
-            state={{ back: "/products", title: "심부름 상세" }} // 업데이트 된 방식 props 추가
-          >
+        <div className="li_contents max-w-full min-w-0 flex flex-col flex-grow gap-[4px]">
+          <h2 className="li_title font-laundry text-card-title truncate overflow-hidden text-ellipsis">
             {item.name}
-          </Link>
-        </h2>
+          </h2>
 
-        {/* <ul className="li_tags flex gap-[8px] min-w-0 w-full overflow-scroll">
+          {/* <ul className="li_tags flex gap-[8px] min-w-0 w-full overflow-scroll">
           <li className="tag flex items-center gap-[4px] px-[6px] rounded bg-[#FCFFD8] font-pretendard text-[16px] max-w-full truncate text-ellipsis min-w-0 flex-shrink-0">
             <img
               src="../../assets/watch.svg"
@@ -130,15 +130,18 @@ export default function ListItem({ item }) {
           </li>
         </ul> */}
 
-        <TagList tags={item.extra?.tags} />
+          <TagList tags={item.extra?.tags} />
 
-        <div className="li_info flex flex-grow justify-between">
-          <div className="font-pretendard text-card-timelimit">
-            {remainingTime}
+          <div className="li_info flex flex-grow justify-between">
+            <div className="font-pretendard text-card-timelimit">
+              {remainingTime}
+            </div>
+            <div className="font-pretendard text-card-price">
+              {item.price} 원
+            </div>
           </div>
-          <div className="font-pretendard text-card-price">{item.price} 원</div>
         </div>
-      </div>
-    </li>
+      </li>
+    </Link>
   );
 }
