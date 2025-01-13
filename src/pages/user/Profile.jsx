@@ -1,9 +1,9 @@
-export default function Profile({ nickname, earnings, hearts, isMyPage }) {
+export default function Profile({ image, nickname, earnings, hearts, isMyPage }) {
   return (
     <section className="flex items-center mt-6 px-4 font-laundry">
       {/* 프로필 이미지 */}
       <img
-        src="https://via.placeholder.com/100"
+        src={`https://11.fesp.shop${image}`}
         alt="프로필 이미지"
         className="w-20 h-20 rounded-full border border-gray-300"
       />
