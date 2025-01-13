@@ -6,8 +6,8 @@ import useUserStore from "@zustand/userStore";
 
 import Profile from "@pages/user/Profile";
 import Tabs from "@pages/user/Tabs";
-import RequestList from "@pages/user/RequestList";
-import ApplyList from "@pages/user/ApplyList";
+import MyRequests from "@pages/user/MyRequests";
+import MyApplies from "@pages/user/MyApplies";
 
 export default function MyPage() {
   const [activeTab, setActiveTab] = useState("intro");
@@ -115,6 +115,7 @@ export default function MyPage() {
       {/* 핸드폰 사이즈 맞춘 레이아웃 */}
       <div className="w-full max-w-[393px] mx-auto h-screen bg-background-color overflow-scroll">
         <Profile
+          image={users.item.image || "https://via.placeholder.com/100"}
           nickname={users.item.name || "닉네임 없음"}
           earnings={users.item.extra.earnings || "0"}
           hearts={users.item.extra.likes || "0"}
@@ -239,13 +240,13 @@ export default function MyPage() {
 
           {activeTab === "requests" && (
             <div id="requests" className="tab-content p-4">
-              <RequestList requestData={requestData} />
+              <MyRequests requestData={requestData} />
             </div>
           )}
 
           {activeTab === "apply" && (
             <div id="apply" className="tab-content p-4">
-              <ApplyList applyData={applyData} />
+              <MyApplies applyData={applyData} />
             </div>
           )}
         </section>
